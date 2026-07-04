@@ -1,12 +1,6 @@
 class Solution {
 
-    public int[] searchRange(int[] nums, int target) {
 
-        int first = findFirst(nums, target);
-        int last = findLast(nums, target);
-
-        return new int[]{first, last};
-    }
 
     public int findFirst(int[] nums, int target) {
         int s = 0;
@@ -48,5 +42,13 @@ class Solution {
         }
 
         return ans;
+    }
+
+    public int[] searchRange(int[] nums, int target) {
+
+        int first = findFirst(nums, target);
+        int last = findLast(nums, target);
+
+        return new int[]{first, last};
     }
 }
