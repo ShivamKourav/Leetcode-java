@@ -9,6 +9,7 @@ class Solution {
             arr[i] = hour*60 + min;
         }
         Arrays.sort(arr);
+        
         int ans = Integer.MAX_VALUE;
         for(int i=1;i<n;i++){
             ans = Math.min(ans, arr[i]-arr[i-1]);
