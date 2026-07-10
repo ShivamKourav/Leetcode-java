@@ -17,7 +17,6 @@ class Solution {
         for (int center = 0; center < s.length(); center++) {
             int oddCount = expand(s, center, center);
             int evenCount = expand(s, center, center + 1);
-
             totalCount += oddCount + evenCount;
         }
         return totalCount;
