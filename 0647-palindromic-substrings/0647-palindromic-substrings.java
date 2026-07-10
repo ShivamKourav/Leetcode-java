@@ -13,7 +13,6 @@ class Solution {
 
     public int countSubstrings(String s) {
         int totalCount = 0;
-
         for (int center = 0; center < s.length(); center++) {
             int oddCount = expand(s, center, center);
             int evenCount = expand(s, center, center + 1);
