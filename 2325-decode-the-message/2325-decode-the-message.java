@@ -10,7 +10,6 @@ class Solution {
                 start++;
             }
         }
-
         //use mapping
         StringBuilder ans = new StringBuilder();
         for(char ch : message.toCharArray()){
