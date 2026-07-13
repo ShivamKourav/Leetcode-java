@@ -2,15 +2,16 @@ class Solution {
     public List<Integer> sequentialDigits(int low, int high) {
         List<Integer> ans = new ArrayList<>();
 
-        for (int len = digits(low); len <= digits(high); len++) {
+        String digits = "123456789";
 
-            for (int start = 1; start <= 10 - len; start++) {
+        int lowLength = String.valueOf(low).length();
+        int highLength = String.valueOf(high).length();
 
-                int num = 0;
+        for (int len = lowLength; len <= highLength; len++) {
 
-                for (int i = 0; i < len; i++) {
-                    num = num * 10 + (start + i);
-                }
+            for (int start = 0; start + len <= 9; start++) {
+
+                int num = Integer.parseInt(digits.substring(start, start + len));
 
                 if (num >= low && num <= high) {
                     ans.add(num);
@@ -19,14 +20,5 @@ class Solution {
         }
 
         return ans;
-    }
-
-    public int digits(int n) {
-        int count = 0;
-        while (n > 0) {
-            count++;
-            n /= 10;
-        }
-        return count;
     }
 }
