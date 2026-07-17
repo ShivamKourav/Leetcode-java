@@ -8,7 +8,7 @@ class Solution {
 
         while (candies > 0) {
 
-            if (candies > give) {
+            if (candies >= give) {
                 ans[index] += give;
                 candies -= give;
             } else {
