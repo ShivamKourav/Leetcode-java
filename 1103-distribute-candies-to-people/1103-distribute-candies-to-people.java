@@ -9,10 +9,10 @@ class Solution {
         while (candies > 0) {
 
             if (candies >= give) {
-                ans[index] += give;
+                ans[index] = ans[index] + give;
                 candies = candies - give;
             } else {
-                ans[index] += candies;
+                ans[index] = ans[index] + candies;
                 candies = 0;
             }
 
