@@ -10,7 +10,7 @@ class Solution {
 
             if (candies >= give) {
                 ans[index] += give;
-                candies -= give;
+                candies = candies - give;
             } else {
                 ans[index] += candies;
                 candies = 0;
