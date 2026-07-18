@@ -13,7 +13,6 @@ class Solution {
                 sum += nums[i];
             }
         }
-
         return sum;
     }
 }
