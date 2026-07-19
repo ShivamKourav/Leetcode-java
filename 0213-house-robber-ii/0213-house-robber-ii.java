@@ -1,14 +1,14 @@
 class Solution {
     public int rob(int[] nums) {
 
-        int n = nums.length-1;
+        int n = nums.length;
 
-        if (n == 0) {
+        if (n == 1) {
             return nums[0];
         }
 
-        int case1 = robHouse(nums, 0, n - 1);
-        int case2 = robHouse(nums, 1, n); 
+        int case1 = robHouse(nums, 0, n - 2);
+        int case2 = robHouse(nums, 1, n - 1); 
 
         return Math.max(case1, case2);
     }
