@@ -27,7 +27,6 @@ class Solution {
                 }
             }
         }
-
         return count;
     }
 }
