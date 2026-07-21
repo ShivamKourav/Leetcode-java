@@ -3,6 +3,7 @@ class Solution {
 
         int head = 1;
         int step = 1;
+        
         int remaining = n;
         boolean left = true;
 
@@ -16,6 +17,7 @@ class Solution {
             step = step * 2;
             left = !left;   
         }
+
         return head;
     }
 }
