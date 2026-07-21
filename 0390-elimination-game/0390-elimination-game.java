@@ -16,7 +16,6 @@ class Solution {
             step = step * 2;
             left = !left;   
         }
-
         return head;
     }
 }
