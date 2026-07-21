@@ -11,7 +11,6 @@ class Solution {
 
         int minFreq = Integer.MAX_VALUE;
         int ans = 0;
-
         for (int i = 0; i <= 9; i++) {
             if (freq[i] > 0 && freq[i] < minFreq) {
                 minFreq = freq[i];
