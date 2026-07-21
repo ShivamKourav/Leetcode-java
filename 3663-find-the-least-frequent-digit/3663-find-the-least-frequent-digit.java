@@ -1,5 +1,6 @@
 class Solution {
     public int getLeastFrequentDigit(int n) {
+        
         int[] freq = new int[10];
 
         while (n > 0) {
