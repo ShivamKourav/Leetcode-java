@@ -1,23 +1,43 @@
-import java.util.Arrays;
-
 class Solution {
     public int numRescueBoats(int[] people, int limit) {
-        Arrays.sort(people);
+        int l = people.length;
+        int[] weight = new int[limit + 1];
 
-        int left = 0;
-        int right = people.length - 1;
-        int boats = 0;
-
-        while (left <= right) {
-
-            if (people[left] + people[right] <= limit) {
-                left++;
-            }
-
-            right--;
-            boats++;
+        for (int i = 0; i < l; i++) {
+            weight[people[i]]++;
         }
 
-        return boats;
+        int count = 0;
+        int left = 1;
+        int right = limit;
+        
+        while (left <= right) {
+            while (left <= right && weight[left] <= 0) {
+                left++;
+            }
+            while (left <= right && weight[right] <= 0) {
+                right--;
+            }
+
+            if (left > right) {
+                break;
+            }
+
+            if (left + right > limit) {
+                count += weight[right];
+                weight[right] = 0;
+            } else {
+                if (left == right) {
+                    count += (weight[left] - 1) / 2 + 1;
+                    break;
+                }
+                int sum = Math.min(weight[left], weight[right]);
+                count += sum;
+                weight[left] -= sum;
+                weight[right] -= sum;
+            }
+        }
+
+        return count;
     }
 }
