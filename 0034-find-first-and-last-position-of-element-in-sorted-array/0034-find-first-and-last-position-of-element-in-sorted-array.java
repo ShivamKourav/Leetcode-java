@@ -1,7 +1,5 @@
 class Solution {
-
-
-
+    
     public int findFirst(int[] nums, int target) {
         int s = 0;
         int e = nums.length - 1;
