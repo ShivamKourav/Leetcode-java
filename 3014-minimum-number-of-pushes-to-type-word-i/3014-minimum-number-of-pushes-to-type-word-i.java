@@ -1,13 +1,12 @@
 class Solution {
     public int minimumPushes(String word) {
-
         int n = word.length();
-        int pushes = 0;
 
-        for (int i = 0; i < n; i++) {
-            pushes += (i / 8) + 1;
-        }
+        int rem = n % 8;
+        int comp = n / 8;
 
-        return pushes;
+        int ans = 8 * comp * (comp + 1) / 2 + (comp + 1) * rem;
+
+        return ans;
     }
 }
