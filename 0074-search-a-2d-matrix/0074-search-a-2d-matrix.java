@@ -20,7 +20,7 @@ class Solution {
                 s = mid + 1;
             }
             else{
-                e = e - 1;
+                e = mid - 1;
             }
             mid = s + (e-s)/2;
         }
