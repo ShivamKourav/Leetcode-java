@@ -1,39 +1,16 @@
 class Solution {
     public int subarraySum(int[] nums, int k) {
-
-        int n = nums.length;
-
-        int[] ps = new int[n];
-
-        // Prefix Sum nikalna
-        ps[0] = nums[0];
-
-        for (int x = 1; x < n; x++) {
-            ps[x] = ps[x - 1] + nums[x];
-        }
-
-        int count = 0;
-
-        // i = starting index
-        // j = ending index
-        for (int i = 0; i < n; i++) {
-
-            for (int j = i; j < n; j++) {
-
-                int sum;
-
-                if (i == 0) {
-                    sum = ps[j];
-                } else {
-                    sum = ps[j] - ps[i - 1];
-                }
-
-                if (sum == k) {
-                    count++;
-                }
+        HashMap<Integer,Integer> mp = new HashMap<>();
+        int result = 0;
+        int cumsum = 0;
+        mp.put(0,1);
+        for(int i=0;i<nums.length;i++){
+            cumsum = cumsum + nums[i];
+            if(mp.containsKey(cumsum-k)){
+                result = result + mp.get(cumsum-k);
             }
+            mp.put(cumsum,mp.getOrDefault(cumsum,0)+1);
         }
-
-        return count;
+        return result;
     }
 }
