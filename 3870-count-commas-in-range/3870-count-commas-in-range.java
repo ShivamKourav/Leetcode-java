@@ -1,9 +1,15 @@
 class Solution {
     public int countCommas(int n) {
-        int count = 0;
-        for (int i = 1000; i <= n; i++) {
-            if (i >= 1000) count++;
+
+        int countCommas = 0;
+
+        if (n < 1000) {
+            return 0;
+        } else {
+
+            countCommas = (n - 1000) + 1;
         }
-        return count;
+
+        return countCommas;
     }
 }
