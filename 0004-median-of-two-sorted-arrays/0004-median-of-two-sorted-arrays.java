@@ -26,7 +26,7 @@ class Solution {
         int total = m + n;
 
         if (total % 2 == 1) {
-            return arr[total / 2];
+            return (double) arr[total / 2];
         }
 
         return (arr[total / 2 - 1] + arr[total / 2]) / 2.0;
