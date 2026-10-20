@@ -19,17 +19,13 @@ class Solution {
                 node = node.next;
             }
         }
-
         Collections.sort(arr);
-
-        ListNode dummy = new ListNode(0);
+        ListNode dummy = new ListNode();
         ListNode temp = dummy;
-
         for (int x : arr) {
             temp.next = new ListNode(x);
             temp = temp.next;
         }
-
         return dummy.next;
     }
 }
