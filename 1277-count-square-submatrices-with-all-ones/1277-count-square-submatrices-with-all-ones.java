@@ -1,4 +1,3 @@
-
 class Solution {
     public int countSquares(int[][] nums) {
         int m = nums.length;
